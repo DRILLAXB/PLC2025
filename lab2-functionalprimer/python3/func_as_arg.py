@@ -1,5 +1,8 @@
 def listFunc():
-    return [i for i in range(1, 6)] #Create list of ints from 1 to 5, Haskell equivalent [1..5]
+    a = input("enter a start number")
+    b = input("enter an end number")
+    # return [i for i in range(a, b)] #Create list of ints from 1 to 5, Haskell equivalent [1..5]
+    return list(range(a, b+1))
 
 def applicatorFunc(inpFunc, s):
     if s=='s':
