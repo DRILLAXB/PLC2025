@@ -36,20 +36,21 @@ function error2Result(err){
 
 function result2Error(result){
 	switch(result){
-		case Result_enumobj.A_BIT_DIFFERENT:
-			return Error_enumobj.FP_ROUNDING;
-		break;
-		case Result_enumobj.INFINITY:
-			return Error_enumobj.FP_OVERFLOW;
-		break;
-		case Result_enumobj.ZERO:
-			return Error_enumobj.FP_UNDERFLOW;
-		break;
-		case Result_enumobj.VERY_DIFFERENT:
-			return Error_enumobj.INT_OVERFLOW;
-		break;
-		default:
-			return "Invalid result value";
+	
+	case Result_enumobj.A_BIT_DIFFERENT:
+		return Error_enumobj.FP_ROUNDING;
+	break;
+	case Result_enumobj.INFINITY:
+		return Error_enumobj.FP_OVERFLOW;
+	break;
+	case Result_enumobj.ZERO:
+		return Error_enumobj.FP_UNDERFLOW;
+	break;
+	case Result_enumobj.VERY_DIFFERENT:
+		return Error_enumobj.INT_OVERFLOW;
+	break;
+	default:
+		return "Invalid result value";
 	}
 }
 
