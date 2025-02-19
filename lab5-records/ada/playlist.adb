@@ -14,18 +14,18 @@ procedure PlayList is
         Put (To_String (p.name));
     end Put_Person;
 
-    type ItemVariant is (pause, piece);
+    type item_variant_type is (pause, piece);
 
-    type Item(variant : ItemVariant) is record
+    type Item(item_variant : item_variant_type) is record
         
-      
-      case variant is 
+      length_secs : Float;
+      case item_variant is 
          when piece =>
             name        : Unbounded_String;
             performer   : Person;
-            length_secs : Float;
+            
          when pause =>
-            pause_length_secs : Float;
+            null;
             
          
 
@@ -36,7 +36,7 @@ procedure PlayList is
 
     procedure Put_Item (i : Item) is
       begin
-         case i.variant is
+         case i.item_variant is
             when piece =>
                   Put(To_String(i.name));                -- Print the name of the piece
                   Put(" by ");                            -- Print separator
